@@ -32,6 +32,12 @@ function setup() {
   bow.scale = 1;
   
    score = 0    
+
+   redGroup = new Group;
+   blueGroup = new Group;
+   pinkGroup = new Group;
+   greenGroup = new Group;
+   arrowGroup = new Group;
 }
 
 function draw() {
@@ -70,22 +76,22 @@ function draw() {
   if(arrowGroup.isTouching(redGroup)){
     redGroup.destroyEach();
     arrowGroup.destroyEach();
-    score=score+2;
+    score=score+5;
   }
   if(arrowGroup.isTouching(blueGroup)){
     blueGroup.destroyEach();
     arrowGroup.destroyEach();
-    score=score+1;
+    score=score+5;
   }
   if(arrowGroup.isTouching(pinkGroup)){
     pinkGroup.destroyEach();
     arrowGroup.destroyEach();
     score=score+5;
   }
-  if(arrowGroup.isTouching(blueGroup)){
-    blueGroup.destroyEach();
+  if(arrowGroup.isTouching(greenGroup)){
+    greenGroup.destroyEach();
     arrowGroup.destroyEach();
-    score=score+3;
+    score=score+5;
   }    
     
   drawSprites();
@@ -102,7 +108,7 @@ function draw() {
   arrow.velocityX = -4;
   arrow.lifetime = 100;
   arrow.scale = 0.3;
-  arrowGroup.addGroup(arrow);
+  arrowGroup.add(arrow);
 }
 
 function redBalloon() {
@@ -110,8 +116,8 @@ function redBalloon() {
   red.addImage(red_balloonImage);
   red.velocityX = 3;
   red.lifetime = 150;
-  red.scale = 0.15;
-  redGroup.addGroup(red);
+  red.scale = 0.09;
+  redGroup.add(red);
 }
 
 function blueBalloon() {
@@ -120,7 +126,7 @@ function blueBalloon() {
   blue.velocityX = 3;
   blue.lifetime = 150;
   blue.scale = 0.1;
-  blueGroup.addGroup(blue);
+  blueGroup.add(blue);
 }
 
 function greenBalloon() {
@@ -128,8 +134,8 @@ function greenBalloon() {
   green.addImage(green_balloonImage);
   green.velocityX = 3;
   green.lifetime = 150;
-  green.scale = 0.2;
-  greenGroup.addGroup(green);
+  green.scale = 0.1;
+  greenGroup.add(green);
 }
 
 function pinkBalloon() {
@@ -138,5 +144,5 @@ function pinkBalloon() {
   pink.velocityX = 3;
   pink.lifetime = 150;
   pink.scale = 1
-  pinkGroup.addGroup(pink);
+  pinkGroup.add(pink);
 }
